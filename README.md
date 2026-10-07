@@ -1,6 +1,6 @@
 # Danish Letter Helper
 
-A small web app that helps you understand Danish letters. You paste in a letter, and it tells you:
+A small web app that helps you understand Danish letters. Paste the text of a letter, or upload a PDF or a photo, and it tells you:
 
 - the type of letter (payment, rent or other)
 - how urgent it is
@@ -10,15 +10,22 @@ A small web app that helps you understand Danish letters. You paste in a letter,
 ## Built with
 
 - Python and FastAPI (backend)
+- pypdf and Tesseract OCR (reading PDFs and photos)
 - React and TypeScript (frontend)
 
 ## How to run it
+
+You need Python 3, Node.js and Tesseract with the Danish language.
+
+On a Mac, install Tesseract with:
+
+    brew install tesseract tesseract-lang
 
 Backend:
 
     python3 -m venv .venv
     source .venv/bin/activate
-    pip install fastapi uvicorn
+    pip install -r requirements.txt
     uvicorn api:app --reload
 
 Frontend (in a second terminal):
