@@ -1,5 +1,8 @@
 # Danish Letter Helper
 
+# Danish Letter Helper
+
+![Danish Letter Helper screenshot](docs/screenshot.png)
 A small web app that helps you understand Danish letters. Paste the text of a letter, or upload a PDF or a photo, and it tells you:
 
 - the type of letter (payment, rent or other)
