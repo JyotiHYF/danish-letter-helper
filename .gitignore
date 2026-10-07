@@ -2,3 +2,5 @@
 node_modules/
 __pycache__/
 letter*.txt
+test.pdf
+test.png
