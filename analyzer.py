@@ -3,18 +3,23 @@ rent_words = ["husleje", "leje", "lejer"]
 urgent_words = ["senest", "frist", "rykker", "inkasso"]
 months = ["januar", "februar", "marts", "april", "maj", "juni",
           "juli", "august", "september", "oktober", "november", "december"]
-
-
+tax_words = ["skat", "skattestyrelsen", "årsopgørelse", "restskat"]
+health_words = ["læge", "sygehus", "hospital", "sundhedskort", "henvisning"]
 def find_letter_type(text):
     text = text.lower()
     for word in rent_words:
         if word in text:
             return "rent"
+    for word in tax_words:
+        if word in text:
+            return "tax"
     for word in payment_words:
         if word in text:
             return "payment"
+    for word in health_words:
+        if word in text:
+            return "health"    
     return "other"
-
 
 def find_urgency(text):
     text = text.lower()
@@ -39,6 +44,10 @@ def find_action(letter_type):
         return "Pay the amount on time."
     elif letter_type == "rent":
         return "Check your rent and keep this letter."
+    elif letter_type == "tax":
+        return "Check your tax statement on skat.dk and pay or claim any amount."
+    elif letter_type == "health":
+        return "Check the date and time of your appointment and bring your health card."
     else:
         return "Read the letter and check if you need to reply."
 
